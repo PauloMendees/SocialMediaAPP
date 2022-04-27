@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions} from 'react-native'
-import { blackBackground, blue, greyText } from '../../styles/global.colors'
+import { blackBackground, blue, greyText, white } from '../../styles/global.colors'
 
 export default StyleSheet.create({
     container: {
@@ -8,7 +8,8 @@ export default StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: blackBackground
     },
     input: {
         color: greyText,
@@ -59,5 +60,71 @@ export default StyleSheet.create({
         fontSize: 17,
         fontWeight: 'bold',
         color: blackBackground
+    },
+
+    logoWhite: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        fontFamily: 'Roboto',
+        color: white
+    },
+
+    logoBlue: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        fontFamily: 'Roboto',
+        color: blue
+    },
+
+    checkboxContainer: {
+        marginTop: 15,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+
+    borderCheckbox: {
+        width: 15,
+        height: 15,
+        borderWidth: 1,
+        borderColor: blue,
+        borderRadius: 50,
+        padding: 2.5,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+
+    checkMarked: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: blue,
+        borderRadius: 50,
+    },
+
+    checkUnmarked: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'inherit',
+        borderRadius: 50,
+    },
+
+    labelCheckbox: {
+        marginLeft: 8,
+        color: blue,
+        fontWeight: 'bold'
+    },
+
+    supContainer: {
+        width: '80%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+
+    esqueciSenha: {
+        color: white,
+        opacity: 0.7,
+        fontSize:  12,
+        marginTop: 15,
     }
 })
