@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { TextInput, TouchableWithoutFeedback, KeyboardAvoidingView, View, Keyboard, Text, TouchableHighlight, Image } from 'react-native';
+import { KeyboardAvoidingView, TouchableWithoutFeedback, View, TouchableHighlight, Text, TextInput, Image, Keyboard } from 'react-native'
 import Button from '../../components/Button/Button';
 import { greyText, blue, blackBackground } from '../../styles/global.colors';
 import Style from './style'
 
-export default function ForgotPassword({ navigation }) {
+export default function ForgotCode({ navigation }) {
     const [focusInput, setFocusInput] = useState(false)
     const [isPress, setIsPress] = React.useState(false);
 
@@ -15,7 +15,7 @@ export default function ForgotPassword({ navigation }) {
                     <TouchableHighlight
                         style={Style.imgContainer}
                         onPress={() => {
-                            navigation.navigate('Auth')
+                            navigation.navigate('ForgotPassword')
                         }}
                     >
                         <Image
@@ -24,10 +24,10 @@ export default function ForgotPassword({ navigation }) {
                         />
                     </TouchableHighlight>
                     <View style={Style.content}>
-                        <Text style={Style.text}>Forgot my password</Text>
+                        <Text style={Style.text}>Put your email code</Text>
                         <View style={Style.inputContainer}>
                             <TextInput
-                                placeholder='E-mail'
+                                placeholder='Six digits code'
                                 placeholderTextColor={greyText}
                                 style={focusInput ? Style.focusInput : Style.input}
                                 onBlur={() => setFocusInput(false)}
@@ -37,13 +37,13 @@ export default function ForgotPassword({ navigation }) {
                         <Button
                             backgroundColor={blue}
                             width="80%"
-                            text="Send email"
+                            text="Confirm"
                             textSize={17}
                             fontWeight="bold"
                             textColor={blackBackground}
                             marginTop={15}
                             onPress={() => {
-                                navigation.navigate("ForgotCode")
+                                navigation.navigate("SuccessConfirmation")
                             }}
                         />
                     </View>

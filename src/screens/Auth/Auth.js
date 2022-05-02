@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { TextInput, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Platform, View, TouchableHighlight, Text } from 'react-native'
+import Button from '../../components/Button/Button';
 import CheckBox from '../../components/CheckBox/CheckBox';
-import { blue, greyText, white } from '../../styles/global.colors';
+import { blackBackground, blue, greyText, white } from '../../styles/global.colors';
 import Style from './style'
 
 export default function Auth({ navigation  }) {
     const [focusUser, setFocusUser] = useState(false)
     const [focusPassword, setFocusPassword] = useState(false)
-    const [keepLogged, setKeepLogged] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
 
     const [isPress, setIsPress] = React.useState(false);
 
@@ -32,26 +33,30 @@ export default function Auth({ navigation  }) {
                         placeholder='Password'
                         style={focusPassword ? Style.focusInput : Style.input}
                         placeholderTextColor={greyText}
-                        secureTextEntry={true}
+                        secureTextEntry={!showPassword}
                     />
                     <View style={Style.supContainer}>
                         <CheckBox
-                            label="Permanecer logado"
+                            label="Show password"
                             fontSize={13}
                             color={white}
-                            checked={keepLogged}
-                            onPress={() => {setKeepLogged(!keepLogged)}}
+                            checked={showPassword}
+                            onPress={() => {setShowPassword(!showPassword)}}
                         />
                         <Text onPress={() => navigation.navigate('ForgotPassword')} style={Style.esqueciSenha}>Esqueci minha senha</Text>
                     </View>
-                    <TouchableHighlight
-                        underlayColor={blue}
-                        onPressIn={() => setIsPress(true)}
-                        onPressOut={() => setIsPress(false)}
-                        style={isPress ? Style.pressedButton : Style.button}
-                    >
-                        <Text style={Style.textButton}>Login</Text>
-                    </TouchableHighlight>
+                    <Button
+                        backgroundColor={blue}
+                        width="80%"
+                        text="Login"
+                        textSize={17}
+                        fontWeight="bold"
+                        textColor={blackBackground}
+                        marginTop={15}
+                        onPress={() => {
+                            navigation.navigate("Logged")
+                        }}
+                    />
                 </View>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>

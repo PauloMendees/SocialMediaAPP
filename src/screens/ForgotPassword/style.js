@@ -6,7 +6,7 @@ export default StyleSheet.create({
         height: Dimensions.get('window').height,
         width: Dimensions.get('window').width,
         justifyContent: 'center',
-        backgroundColor: blackBackground
+        backgroundColor: blackBackground,
     },
 
     content: {
@@ -26,23 +26,27 @@ export default StyleSheet.create({
     },
 
     input: {
-        width: '80%',
+        width: '100%',
         borderWidth: 1,
         borderColor: greyText,
         paddingLeft: 15,
         paddingRight: 15,
         color: greyText,
-        borderRadius: 10
+        borderRadius: 10,
+        marginBottom: 8,
+        marginTop: 15
     },
 
     focusInput: {
-        width: '80%',
+        width: '100%',
         borderWidth: 1,
         borderColor: blue,
         paddingLeft: 15,
         paddingRight: 15,
         color: blue,
-        borderRadius: 10
+        borderRadius: 10,
+        marginBottom: 8,
+        marginTop: 15
     },
 
     buttonContainer: {
@@ -76,5 +80,9 @@ export default StyleSheet.create({
         marginLeft: '10%',
         width: '13%',
         borderRadius: 10
+    },
+
+    inputContainer: {
+        width: '80%',
     }
 })
